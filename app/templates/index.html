@@ -1,0 +1,15 @@
+<html>
+  </head>
+    {% if title %}
+    <title>{{ title }} - FlaskApp</title>
+    {% else %}
+    <title>Welcome to ze FlaskApp</title>
+    {% endif %}
+  </head>
+  <body>
+    <h1>Hello, {{ user.nickname }}!!</h1>
+    {% for post in posts %}
+    <div><p><b>{{ post.author.nickname }} says:</b> {{ post.body }}</p></div>
+    {% endfor %}
+  </body>
+</html>
