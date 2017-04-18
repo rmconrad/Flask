@@ -6,7 +6,6 @@ from app import app
 from .forms import LoginForm
 
 # index view function
-
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     form = LoginForm()
