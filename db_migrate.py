@@ -1,4 +1,4 @@
-#! flask/bin/python
+#! flask/bin/python3.6
 
 import imp
 from migrate.versioning import api
