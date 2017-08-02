@@ -1,2 +1,2 @@
 from .user import User
-from .posts import Post
+from .posts import Feed_Name
