@@ -1,0 +1,31 @@
+version: "2.0"
+services:
+  db:
+    image: mysql:5.7.18
+    expose:
+      - "3306"
+    ports:
+      - "3306"
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4
+    environment:
+      MYSQL_DATABASE: database
+      MYSQL_USER: garuda
+      MYSQL_PASSWORD: garuda
+      MYSQL_ROOT_PASSWORD: garuda
+  garuda:
+    build: .
+    command: python run.py
+    volumes:
+      - .:/usr/Flask/
+    expose:
+      - "3500"
+    ports:
+      - "3500:3500"
+    depends_on:
+      - db
+    links:
+      - db
+    environment:
+      DEBUG: "0"
+      ENVIRONMENT: "testing"
+      DOCKER_COMPOSE: "True"
